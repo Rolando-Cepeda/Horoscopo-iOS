@@ -126,7 +126,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-DM-bC3">
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-DM-bC3">
                                                 <rect key="frame" x="186" y="219" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </activityIndicatorView>
@@ -155,7 +155,11 @@
                             <constraint firstItem="zmw-DK-rgQ" firstAttribute="bottom" secondItem="AlX-ni-5Fd" secondAttribute="bottom" id="g8N-tY-l6A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZPK-bQ-EQ7"/>
+                    <navigationItem key="navigationItem" id="ZPK-bQ-EQ7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="OLc-Mk-n3u">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datesLabel" destination="mP5-2l-s90" id="uHV-qb-a1J"/>
                         <outlet property="descriptionTextView" destination="KpP-9Z-DsL" id="k1d-df-rwi"/>
@@ -188,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

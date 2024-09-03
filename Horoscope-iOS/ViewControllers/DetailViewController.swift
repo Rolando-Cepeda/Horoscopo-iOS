@@ -30,6 +30,8 @@ class DetailViewController: UIViewController {
             nameLabel.text = horoscope.name
             logoImageView.image = horoscope.logo
             datesLabel.text = horoscope.dates
+            
+            getHoroscopeLuck()
         }
     }
     

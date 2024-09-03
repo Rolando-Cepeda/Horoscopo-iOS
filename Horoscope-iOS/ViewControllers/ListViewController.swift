@@ -19,11 +19,11 @@ class ListViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
     }
-
+//Nos dice el numero de filas o celdas que tienen que mostrar
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return horoscopeList.count
     }
-    
+  //Nos dice la CELDA para cada posicion
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HoroscopeViewCell
         
@@ -34,6 +34,19 @@ class ListViewController: UIViewController, UITableViewDataSource {
         cell.datesLabel.text = horoscope.dates
         
         return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Preguntamos cual es el identificador del segue
+        if segue.identifier == "navigateToDetail" {
+            // Obtenemos el viewController de destino
+            let viewController = segue.destination as! DetailViewController
+            // Obtenemos la celda seleccionada
+            let indexPath = tableView.indexPathForSelectedRow!
+            // Asignamos en detalle el horoscopo que corresponde a la celda seleccionada
+            viewController.horoscope = horoscopeList[indexPath.row]
+            // Deseleccionamos la celda para que no aparezca marcada
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
     }
 }
 

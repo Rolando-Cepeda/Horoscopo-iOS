@@ -54,6 +54,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="datesLabel" destination="jaO-zE-bip" id="7Mj-MA-bVy"/>
+                                            <outlet property="favoriteIcon" destination="q7v-Z9-Ehr" id="ly8-jL-pPc"/>
                                             <outlet property="logoImageView" destination="DoT-E1-e1s" id="2r3-an-0Kk"/>
                                             <outlet property="nameLabel" destination="nc8-ap-9l7" id="1ah-Zr-huP"/>
                                             <segue destination="7WM-Pn-kRj" kind="show" identifier="navigateToDetail" id="dIR-gm-dz1"/>
@@ -158,17 +159,22 @@
                     <navigationItem key="navigationItem" id="ZPK-bQ-EQ7">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="OLc-Mk-n3u">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="favoriteIcon:" destination="oOe-0W-I98" id="n9v-rJ-mFv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="datesLabel" destination="mP5-2l-s90" id="uHV-qb-a1J"/>
                         <outlet property="descriptionTextView" destination="KpP-9Z-DsL" id="k1d-df-rwi"/>
+                        <outlet property="favoriteButtonItem" destination="OLc-Mk-n3u" id="ybt-t2-jLS"/>
                         <outlet property="loading" destination="gCd-DM-bC3" id="4hn-ID-zXY"/>
                         <outlet property="logoImageView" destination="TzF-VO-fRg" id="ljy-MZ-7Tg"/>
                         <outlet property="nameLabel" destination="DEx-UR-kPm" id="hTK-Bd-QF6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfD-qA-0bu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="oOe-0W-I98" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1840.4580152671756" y="3.5211267605633805"/>
         </scene>

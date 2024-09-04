@@ -19,19 +19,32 @@ class ListViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
 //Nos dice el numero de filas o celdas que tienen que mostrar
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return horoscopeList.count
     }
   //Nos dice la CELDA para cada posicion
+    // // Obtenemos el horoscopo correspondiente a la posición de la celda
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HoroscopeViewCell
         
         let horoscope = horoscopeList[indexPath.row]
         
-        cell.nameLabel.text = horoscope.name
+        // Rellenamos los datos de la celda.
+        /*cell.nameLabel.text = horoscope.name
         cell.logoImageView.image = horoscope.logo
-        cell.datesLabel.text = horoscope.dates
+        cell.datesLabel.text = horoscope.dates*/
+        
+        //Ahora llamaremos al RENDER para pintar.
+        cell.render(horoscope: horoscope)
+        
         
         return cell
     }
